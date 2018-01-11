@@ -1,19 +1,7 @@
-<div>
-  <h1>Reuse Hero Class</h1>
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <p>id: {{ hero.id }}</p>
-  <div>
-    <p>Hero Name:
-      <input [(ngModel)]="hero.name" placeholder="name">
-    </p>
-  </div>
-
-  <h1>Create my Own Test Class</h1>
-  <h2>{{ test.name | uppercase }} Details</h2>
-  <p>id: {{ test.id }}</p>
-  <div>
-    <p>test Name:
-      <input [(ngModel)]="test.name" placeholder="name">
-    </p>
-  </div>
-</div>
+<h2>Test Component</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<app-test-detail [hero]="selectedHero"></app-test-detail>
