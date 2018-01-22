@@ -7,6 +7,9 @@ import { HeroesComponent } from "./heroes/heroes.component";
 import { TestComponent } from "./test/test.component";
 import { HeroDetailComponent } from "./components/hero-detail/hero-detail.component";
 import { TestDetailComponent } from "./components/test-detail/test-detail.component";
+import { HeroService } from "./services/hero.service";
+import { MessagesComponent } from './components/messages/messages.component';
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [
@@ -14,10 +17,11 @@ import { TestDetailComponent } from "./components/test-detail/test-detail.compon
     HeroesComponent,
     TestComponent,
     HeroDetailComponent,
-    TestDetailComponent
+    TestDetailComponent,
+    MessagesComponent
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [HeroService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
